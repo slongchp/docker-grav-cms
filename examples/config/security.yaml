@@ -1,2 +1,0 @@
-# Use a unique salt string. If not defined a random salt will be generated
-salt: secureSalt123

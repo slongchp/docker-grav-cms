@@ -1,22 +1,16 @@
-# grav-blog
-Docker image for grav used as blog
+# Docker Grav CMS
+Moddable Container for Grav CMS based on alpine linux
 
 # Usage
 This image is meant to be run behind an SSL capable proxy, as it does not care
-about transport layer security. You must provide configs for grav in the
-`/app/user/config` folder. See the examples folder for a minimal setup.
+about transport layer security. It provides a fresh install of grav-admin, 
+complete with new-car smell.  
 
-I recommend the clean-blog theme for the best compability.  It is intended to be
-synced via git-sync. Manually you can install it with gpm:
+It prioritizes the things I want in a lightweight containerized CMS.  It's small, 
+it's moddable, and everything it uses is pretty well-supported.
 
-```
-# Workdir /app
-bin/gpm install clean-blog
-```
-
-The gitsync must be triggered on docker start, e.g. by:
-
-```
-# Workdir /app
-su nginx -s /bin/sh -c 'bin/plugin git-sync sync'
-```
+## Disclaimer
+I'm probably not going to maintain this with any real sense of urgency.  You should
+probably be able to roll your own updates by incrementing the grav version and 
+rebuilding the dockerfile.  If you're not comfortable doing that on your own, maybe
+don't use this for anything long-term.
